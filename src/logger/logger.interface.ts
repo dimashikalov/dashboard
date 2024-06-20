@@ -1,4 +1,3 @@
-
 import { Logger, ILogObj } from 'tslog';
 
 export interface ILogger {
@@ -6,5 +5,5 @@ export interface ILogger {
 	// logger: Logger<ILogObj>;
 	log: (...args: unknown[]) => void;
 	error: (...args: unknown[]) => void;
-	warn: (...args: unknown[]) => void;	
- }
+	warn: (...args: unknown[]) => void;
+}

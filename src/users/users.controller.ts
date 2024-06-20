@@ -12,20 +12,19 @@ import { IUserController } from './users.controlle.interface';
 @injectable()
 export class UserController extends BaseController implements IUserController {
 	constructor(@inject(TYPES.ILogger) private loggerService: ILogger) {
-		super(loggerService)
-		
+		super(loggerService);
+
 		this.bindRoutes([
-			{path:'/register', method: 'post', func: this.register},
-			{path:'/login', method: 'post', func: this.login},
-		])
+			{ path: '/register', method: 'post', func: this.register },
+			{ path: '/login', method: 'post', func: this.login },
+		]);
 	}
 
-	login(req: Request, res: Response, next: NextFunction) {
+	login(req: Request, res: Response, next: NextFunction): void {
 		// this.ok(res, 'login')
-		next(new HTTPError(401, 'No login', 'login'))
+		next(new HTTPError(401, 'No login', 'login'));
 	}
-	register(req: Request, res: Response, next: NextFunction) {
-		this.ok(res, 'register')
-		
+	register(req: Request, res: Response, next: NextFunction): void {
+		this.ok(res, 'register');
 	}
 }
